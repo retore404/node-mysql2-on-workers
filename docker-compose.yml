@@ -1,0 +1,10 @@
+services:
+  node-mysql2-on-workers-database:
+    build: ./mysql
+    container_name: node-mysql2-on-workers-database
+    env_file:
+      - ./mysql/db.env
+    volumes:
+      - ./mysql/volumes/data:/var/lib/mysql # データファイル
+    ports:
+      - 3306:3306
